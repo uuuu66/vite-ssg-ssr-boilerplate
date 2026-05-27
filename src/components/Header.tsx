@@ -11,7 +11,9 @@ const Header: React.FC<Props> = ({ menuInfos = [] }) => {
     <header className="fixed top-0 left-0 flex justify-between items-center p-15 w-full  z-10 bg-black">
       <div>
         {menuInfos?.map((value) => (
-          <span key={value.title}>{value.scrollY}</span>
+          <span key={value.title} className="mr-4">
+            {value.title}
+          </span>
         ))}
       </div>
       <img

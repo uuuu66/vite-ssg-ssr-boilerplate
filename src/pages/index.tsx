@@ -1,4 +1,4 @@
-import { Ref, useEffect, useRef } from "react";
+import { useRef } from "react";
 import Header from "../components/Header";
 import FAQSection from "../sections/FAQSection";
 import HomeSection from "../sections/HomeSection";
@@ -22,18 +22,8 @@ const Home: React.FC<Props> = () => {
     product: null,
     faq: null,
   });
-  console.log(sectionRefs.current);
   return (
     <div className="bg-black text-white">
-      <Header
-        menuInfos={[
-          { title: "Home", scrollY: `${sectionRefs.current.home}px` },
-          { title: "Teaml", scrollY: `${sectionRefs.current.team}px` },
-          { title: "Process", scrollY: `${sectionRefs.current.process}px` },
-          { title: "Product", scrollY: `${sectionRefs.current.product}px` },
-          { title: "FAQ", scrollY: `${sectionRefs.current.faq}px` },
-        ]}
-      />
       <HomeSection
         ref={(ref) => {
           return (sectionRefs.current.home = ref);
